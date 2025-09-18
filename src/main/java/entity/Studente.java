@@ -22,7 +22,7 @@ public class Studente {
     @Column(unique = true ) // aggiunge vincolo unicità di specifico valore nella tabella
     private String matricola;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable( // many to many necessita di una tabella di join intermedia
             name = "iscizione", // Specifica il nome della tabella join
             joinColumns = @JoinColumn(name = "id_studente", referencedColumnName = "id"),
@@ -31,7 +31,7 @@ public class Studente {
     private Set<Corso> corsiFrequentati = new HashSet<>();
 
 
-    @OneToMany(mappedBy = "studente") // nome della proprietà Studente in Esame
+    @OneToMany(mappedBy = "studente", fetch = FetchType.EAGER) // nome della proprietà Studente in Esame
     private Set<Esame> esami = new HashSet<>();
 
     // Devo avere 3 costrutotri: uno vuoto
@@ -53,6 +53,13 @@ public class Studente {
         this.nome = nome;
         this.cognome = cognome;
         this.matricola = matricola;
+    }
+
+    // Metodo Helper che aggiunge un corso ad uno studente
+    public void addCorso(Corso corso){
+        this.corsiFrequentati.add(corso);
+        corso.getStudentiIscritti().add(this); // Collego il corso allo studente
+        corso.getStudentiIscritti().add(this); // Collego lo studente al corso
     }
 
     public Long getId() {

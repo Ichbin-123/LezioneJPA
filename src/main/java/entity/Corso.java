@@ -95,12 +95,12 @@ public class Corso {
     @Override
     public String toString() {
         return "Corso{" +
-                "id=" + id +
+                // "id=" + id +
                 ", codice='" + codice + '\'' +
                 ", nome='" + nome + '\'' +
                 ", creditiCFU=" + creditiCFU +
-                ", studentiIscritti=" + studentiIscritti +
-                ", esami=" + esami +
+                // ", studentiIscritti=" + studentiIscritti +
+                // ", esami=" + esami +
                 '}';
     }
 }
