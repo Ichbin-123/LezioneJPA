@@ -48,6 +48,46 @@ public class Corso {
         return id;
     }
 
+    public String getCodice() {
+        return codice;
+    }
+
+    public void setCodice(String codice) {
+        this.codice = codice;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public Integer getCreditiCFU() {
+        return creditiCFU;
+    }
+
+    public void setCreditiCFU(Integer creditiCFU) {
+        this.creditiCFU = creditiCFU;
+    }
+
+    public Set<Studente> getStudentiIscritti() {
+        return studentiIscritti;
+    }
+
+    public void setStudentiIscritti(Set<Studente> studentiIscritti) {
+        this.studentiIscritti = studentiIscritti;
+    }
+
+    public Set<Esame> getEsami() {
+        return esami;
+    }
+
+    public void setEsami(Set<Esame> esami) {
+        this.esami = esami;
+    }
+
     public void setId(Long id) {
         this.id = id;
     }

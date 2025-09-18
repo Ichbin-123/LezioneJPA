@@ -56,6 +56,26 @@ public class Esame {
         return studente;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setVoto(Integer voto) {
+        this.voto = voto;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
+    public void setCorso(Corso corso) {
+        this.corso = corso;
+    }
+
+    public void setStudente(Studente studente) {
+        this.studente = studente;
+    }
+
     @Override
     public String toString() {
         return "Esame{" +
